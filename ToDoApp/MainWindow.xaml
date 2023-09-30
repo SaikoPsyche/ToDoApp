@@ -1,0 +1,44 @@
+﻿<Window x:Class="ToDoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="To Do List" Height="700" Width="350">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" Background="#000000" Foreground="#FFFFFF" x:Name="ToDoListLabel"/>
+
+        <ScrollViewer Grid.Column="1" Grid.Row="3" VerticalScrollBarVisibility="Auto">
+            <ListView Background="#000000" Foreground="#FFFFFF" FontSize="18" x:Name="ToDoListLV">
+                
+            </ListView>
+        </ScrollViewer>
+
+        <TextBox Grid.Column="1" Grid.Row="5" Background="#111111" Foreground="#FFFFFF" x:Name="ToDoInput"/>
+
+        <Button Grid.Column="1" Grid.Row="7" FontSize="30" x:Name="AddToListButton"
+        
+            MouseEnter="AddToListButton_MouseEnter" Click="AddToListButton_Click" MouseLeave="AddToListButton_MouseLeave" FontFamily="Comic Sans MS" Content="Add To List"/>
+
+    </Grid>
+</Window>

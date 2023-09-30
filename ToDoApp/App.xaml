@@ -1,0 +1,29 @@
+﻿<Application x:Class="ToDoApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ToDoApp"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <LinearGradientBrush x:Key="GreyGradientBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="#212121" Offset="0.0"/>
+            <GradientStop Color="#E5E4E2" Offset="0.5"/>
+            <GradientStop Color="#212121" Offset="1.0"/>
+        </LinearGradientBrush>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
+                            <Rectangle x:Name="CurvedRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="30" RadiusY="30" Fill="#000000"/>
+
+                            <DockPanel x:Name="ToDoButtonCPDockPanel">
+                                <ContentPresenter x:Name="ToDoButtonCP" Margin="40,0,0,5" Content="{TemplateBinding Content}" TextBlock.Foreground="#FFFFFF"/>
+                            </DockPanel>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
